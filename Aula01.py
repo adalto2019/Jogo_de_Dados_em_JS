@@ -1,1 +1,0 @@
-print('Bem vindo a sua primeira aula compartilhada!')
