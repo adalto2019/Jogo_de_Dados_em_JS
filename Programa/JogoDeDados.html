@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Dados</title>
+</head>
+<body>
+    <style>
+        body{text-align: center;
+        background-image: url(imgDados.jfif);
+            }   
+        h1{background-color: black;
+            color: wheat;
+            font-size: 30px;
+            }
+        form{background: white;
+            width: 400px;
+            margin-left: 450px;
+            }
+         #Placar{background-color: white;
+            margin-left: 1000px;
+            }       
+    </style>
+        <form id="form">
+        <h1>Jogo de Dados</h1>
+        <h4>Clique para sortear os dados</h4>
+        JOGADOR 1: <input type="button" name="btn" value="Lançar" onclick="lancarPC()">
+        <p></p>
+            <div id="imgPC"> 
+                <div id="res1">Resultado..</div>
+                <div id="imgs1">Imagens</div>
+            </div>
+            <p></p>
+        JOGADOR 2: <input type="button" name="btn" value="Lançar" onclick="lancarJG()">       
+            <p></p>
+            <div id="imgJG">
+                <div id="res2">Resultado..</div>
+                <div id="imgs2">Imagens</div>
+            </div>
+            <p></p>
+            <hr>
+        </form>
+    
+    <script>
+        var res1 = document.getElementById("res1")
+        var res2 = document.getElementById("res2")
+        var imgs1 = document.getElementById("imgs1")
+        var imgs2 = document.getElementById("imgs2") 
+        var arrayPC = []
+        var arrayJG = []
+        function lancarPC(){ 
+            c = Math.floor(Math.random() * 6 ) + 1
+            //'6' define qtd de numeros a ser sorteados (o index começa em zero). '1' define de que numero começa.
+            Nsorteado = Number(c)
+            arrayPC.push(Nsorteado)
+            res1.innerHTML = "Histórico dos números sorteados: " + arrayPC //valor que substitui a variável resultado
+            if (c == 1){
+                imgs1.innerHTML = "<img src=img1.jpeg>"
+            }
+            if (c == 2){
+                imgs1.innerHTML = "<img src=img2.jpeg>"
+            }
+            if (c == 3){
+                imgs1.innerHTML = "<img src=img3.jpeg>"
+            }
+            if (c == 4){
+                imgs1.innerHTML = "<img src=img4.jpeg>"
+            }
+            if (c == 5){
+                imgs1.innerHTML = "<img src=img5.jpeg>"
+            }
+            if (c == 6){
+                imgs1.innerHTML = "<img src=img6.jpeg>"
+            }
+        }
+        function lancarJG(){ 
+            c = Math.floor(Math.random() * 6 ) + 1
+            //'6' define qtd de numeros a ser sorteados (o index começa em zero). '1' define de que numero começa.
+            Nsorteado = Number(c)
+            arrayJG.push(Nsorteado)
+            res2.innerHTML = "Histórico dos números sorteados: " + arrayJG //valor que substitui o resultado     
+            if (c == 1){
+                imgs2.innerHTML = "<img src=img1.jpeg>"
+            }
+            if (c == 2){
+                imgs2.innerHTML = "<img src=img2.jpeg>"
+            }
+            if (c == 3){
+                imgs2.innerHTML = "<img src=img3.jpeg>"
+            }
+            if (c == 4){
+                imgs2.innerHTML = "<img src=img4.jpeg>"
+            }
+            if (c == 5){
+                imgs2.innerHTML = "<img src=img5.jpeg>"
+            }
+            if (c == 6){
+                imgs2.innerHTML = "<img src=img6.jpeg>"
+            }
+        }
+    </script>
+    
+</body>
+</html>
